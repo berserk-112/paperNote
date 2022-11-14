@@ -30,7 +30,7 @@ another objective: generating text in specific styles.
 
 # 4TST分类
 
-![image-20221027215310563](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221027215310563.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/taxonomyOfTST.png)
 
 - 按数据集分类
   - 有监督平行语料
@@ -42,7 +42,7 @@ another objective: generating text in specific styles.
   - 间接风格内容解纠缠（解耦）：将原语句的内容隐表示与目标风格的隐表示结合。相关技术：后向翻译，对抗学习，可控文本生成
   - 不解耦：
 
-![image-20221027222653111](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221027222653111.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/DataSet.png)
 
 ## Seq2Seq 平行语料
 
@@ -52,13 +52,13 @@ S2S是基于编解码结构的，将原风格的语句喂给编码器，解码�
 
 相关模型：Delete-Retrieve-Generate，简单来说就是把体现风格的短语删除，再替换成目标风格的短语。优点是model可解释性强，比较简单。缺点：局限性高，使用像情感这种风格，但不适用于正式非正式风格迁移。
 
-![image-20221028091513655](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221028091513655.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/DeleteRetreiveGenerate.png)
 
 ## 对抗学习
 
 目标：1）生成与真实数据无差别的句子 2）移除句子的隐表示中的风格属性
 
-![image-20221031083626071](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221031083626071.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/paperImageadversarialModel.png)
 
 上图中左边是多解码器模型，右边是风格嵌入模型。context z 是通过对抗网络输出的内容表示，不含风格特征。风格分类器，用来分离出风格特征。
 
@@ -66,13 +66,13 @@ S2S是基于编解码结构的，将原风格的语句喂给编码器，解码�
 
 为提高内容的保留又提出了以下模型，通过添加cycle-consistency loss 来保留句子的语义
 
-![image-20221031084653646](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221031084653646.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/ReconstructionLoss.png)
 
 **缺点：** 1）对抗训练在解耦风格与内容并不实用； 2）依赖风格分类器
 
 ## 后向翻译
 
-![image-20221031213006697](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221031213006697.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/Back-translation.png)
 
 缺点同对抗学习方法一样：无法保证风格与内容的充分解耦
 
@@ -84,17 +84,17 @@ S2S是基于编解码结构的，将原风格的语句喂给编码器，解码�
 
 1)解耦
 
-![image](https://github.com/berserk-112/paperNote/blob/main/paperImage/Attribute.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImageAttribute.png)
 
 2）不解耦
 
-![image-20221031220157053](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221031220157053.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/attributes.png)
 
 ## 编辑隐表示 Entangled Latent Representation Editing
 
 不解耦风格与内容，二十直接编辑自编码机学习到的隐表示。
 
-![image-20221031222528024](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221031222528024.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/laten.png)
 
 ## 	强化学习
 
@@ -103,7 +103,7 @@ training caused by the automatic regression decoding process.
 
 缺点：由于梯度采样的差距高，导致训练结果不稳定
 
-![image-20221101090557817](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221101090557817.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/dual.png)
 
 ## 纯粹的无监督方法
 
@@ -119,7 +119,9 @@ training caused by the automatic regression decoding process.
 
 ## 数据集
 
-![image-20221101091932506](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221101091932506.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/dataset%20statis.png)
+
+
 
 ## tasks
 
@@ -141,6 +143,9 @@ offensive语言转换；多属性风格迁移
 
 **流畅度**使用这个模型来判断流畅度Kneser-Ney language mode,PPL(perplexity score)评价流畅度
 
-![image-20221105110906291](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221105110906291.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/yelp.png)
 
-![image-20221105111327688](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221105111327688.png)
+![](https://raw.githubusercontent.com/berserk-112/paperNote/main/paperImage/gyafc.png)
+
+
+
