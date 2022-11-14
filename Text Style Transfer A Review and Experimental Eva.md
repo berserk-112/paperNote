@@ -84,7 +84,7 @@ S2S是基于编解码结构的，将原风格的语句喂给编码器，解码�
 
 1)解耦
 
-![image-20221031215347085](C:\Users\sun\AppData\Roaming\Typora\typora-user-images\image-20221031215347085.png)
+![image](https://github.com/berserk-112/paperNote/blob/main/paperImage/Attribute.png)
 
 2）不解耦
 
